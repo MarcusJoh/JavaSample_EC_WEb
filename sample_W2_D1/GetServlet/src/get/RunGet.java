@@ -52,20 +52,7 @@ public class RunGet extends HttpServlet {
 
 			}
 
-		//request has the info
-		 //EX
-		 
-			String img = request.getParameter("img");
-			out.print(img);
-			if (img.equals("1")) {
-				out.print("<img src=\"1.png\">");
-
-			} else if (img.equals("2")) {
-				out.print("<img src=\"2.png\">");
-			}else {
-				
-				out.print("<h3>No image like that</h3>");
-			}
+	
 		 
 		 
 		 
