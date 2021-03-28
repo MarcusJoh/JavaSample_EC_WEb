@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>read the JSON</title>
+</head>
+<body>
+
+
+<div>
+    <button id="Fetcher">Get a person!</button>
+
+</div>
+<div>
+    <p id="place"></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+<script>
+
+
+    const fetchUrl ="http://localhost:8080/getPersonJson";
+
+
+    document.getElementById("Fetcher").addEventListener("click",function(){
+
+        console.log("click");
+
+
+        fetch(fetchUrl).then(response => response.text()).then(data => useTheData(data));
+
+    });
+
+
+var datatest;
+
+    function useTheData(data){
+        datatest=data
+        console.log(data);
+
+
+        // make it in to Json
+        let inJSON =JSON.parse(data);
+
+            //  get that name
+        let fName=inJSON.Fname;
+        console.log(inJSON.Fname);
+
+        // pu the name on the page
+        document.getElementById("place").innerHTML=fName;
+
+    }
+
+
+
+</script>
+
+
+</html>
